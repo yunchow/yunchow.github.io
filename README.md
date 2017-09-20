@@ -1,5 +1,4 @@
 ![mywife](imgs/r1.jpg)
-<img src="imgs/r1.jpg">
 
 ## Welcome to yunchow's blog
 
