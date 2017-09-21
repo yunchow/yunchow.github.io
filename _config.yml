@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: yunchow.com
+url: 
 date_format: "ordinal"
 title: YUNCHOW
 subtitle: "不忘初心，方得始终"
