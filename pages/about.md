@@ -8,29 +8,23 @@ menu: 关于
 permalink: /about/
 ---
 
-初心不负，方得始终。
+初心不负，终将不凡。
 
-我是一个写代码的
+我就是一个写代码的，我相信相信的力量
 
-我相信相信的力量
-
-![mywife](imgs/r1.jpg)
+![mywife](/imgs/r1.jpg)
 
 ## 联系
 
-{% for website in site.data.social %}
-* {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
-{% endfor %}
+yunchow.zy@gmail.com
 
-## Skill Keywords
+## Skills
+* FP
+* 高性能
+* 高并发
+* 高可用
+* 分布式
 
-{% for category in site.data.skills %}
-### {{ category.name }}
-<div class="btn-inline">
-{% for keyword in category.keywords %}
-<button class="btn btn-outline" type="button">{{ keyword }}</button>
-{% endfor %}
-</div>
-{% endfor %}
+
 
 
