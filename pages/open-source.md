@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Open Source Projects
-keywords: 开源,open-source,GitHub,开源项目
-description: 开源改变世界。
+keywords: YUNCHOW
+description: 长的丑就要多读书
 permalink: /open-source/
 ---
 
@@ -50,3 +50,5 @@ permalink: /open-source/
     </div>
 </section>
 {% endif %}
+
+

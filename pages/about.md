@@ -2,17 +2,19 @@
 layout: page
 title: About
 description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+keywords: YUNCHOW
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+初心不负，方得始终。
 
-仰慕「优雅编码的艺术」。
+我是一个写代码的
 
-坚信熟能生巧，努力改变人生。
+我相信相信的力量
+
+![mywife](imgs/r1.jpg)
 
 ## 联系
 
@@ -30,3 +32,5 @@ permalink: /about/
 {% endfor %}
 </div>
 {% endfor %}
+
+

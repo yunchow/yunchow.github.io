@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Wiki
-description: 人越学越觉得自己无知
+description: 长的丑要多读书
 keywords: 维基, Wiki
 comments: false
 menu: 维基
@@ -17,3 +17,5 @@ permalink: /wiki/
 {% endif %}
 {% endfor %}
 </ul>
+
+
