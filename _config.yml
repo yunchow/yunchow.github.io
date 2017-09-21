@@ -85,7 +85,7 @@ comments_provider: gitment
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: YUNCHOW
+    username: yunchow
 # https://imsun.net/posts/gitment-introduction/
 gitment:
     owner: YUNCHOW
