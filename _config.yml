@@ -11,7 +11,7 @@ keywords: zhouyun, yunchow, zhy, yunchow.zy
 favicon: /favicon.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
-side_bar_repo_limit: 5
+side_bar_repo_limit: 1
 
 # ---------------- #
 #      Author      #
