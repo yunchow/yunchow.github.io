@@ -6,7 +6,7 @@ url:
 date_format: "ordinal"
 title: YUNCHOW在扯淡
 subtitle: "初心不负，终将不凡"
-description: "YUNCHOW个人博客"
+description: "YUNCHOW个人主页"
 keywords: zhouyun, yunchow, zhy, yunchow.zy
 favicon: /favicon.ico
 timezone: Asia/Shanghai
@@ -20,7 +20,7 @@ author: YUNCHOW
 organization: yunchow.com
 organization_url: http://www.yunchow.com
 github_username: YUNCHOW
-location: 中国，杭州
+location: 中国・杭州
 email: yunchow.zy@gmail.com
 
 # ---------------- #
