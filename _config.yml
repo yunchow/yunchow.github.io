@@ -43,12 +43,12 @@ navs:
     href: /open-source/
     label: 开源
 
-  -
-    href: /links/
-    label: 链接
+ # -
+ #   href: /links/
+ #   label: 链接
 
   -
-    href: /about/
+   href: /about/
     label: 关于
 
 # ---------------- #
