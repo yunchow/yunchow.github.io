@@ -1,16 +1,16 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
+description: 不忘初心方得始终
 keywords: YUNCHOW
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-初心不负，终将不凡。
+初心不负，终将不凡
 
-我就是一个写代码的，我相信相信的力量
+我热衷写出优雅的代码，我相信相信的力量
 
 ![mywife](/imgs/r1.jpg)
 
@@ -18,7 +18,7 @@ permalink: /about/
 
 yunchow.zy@gmail.com
 
-## Skills
+## SKILLS
 * FP
 * 高性能
 * 高并发

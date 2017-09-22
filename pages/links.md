@@ -11,6 +11,8 @@ permalink: /links/
 > God made relatives. Thank God we can choose our friends.
 > 
 
-* [我当然在扯淡](http://www.yinwang.org/)
+{% for link in site.data.links %}
+* [{{ link.name }}]({{ link.url }})
+{% endfor %}
 
 
