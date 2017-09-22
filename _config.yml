@@ -40,6 +40,10 @@ navs:
     label: WIKI
 
   -
+    href: /open-source/
+    label: 开源
+
+  -
     href: /links/
     label: 链接
 
