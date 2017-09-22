@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Wiki
+title: 长的丑要多读书
 description: 长的丑要多读书
 keywords: 维基, Wiki
 comments: false

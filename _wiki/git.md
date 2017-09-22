@@ -413,6 +413,3 @@ export LESSCHARSET=utf-8
 
 参考：[Git for windows 中文乱码解决方案](https://segmentfault.com/a/1190000000578037)
 
-#### git diff 中文乱码
-
-只在 Windows 下遇到，目前尚未找到有效办法。

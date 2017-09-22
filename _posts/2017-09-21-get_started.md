@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我要开始扯淡了
-categories: [other]
+categories: [扯淡]
 description: 扯淡
 keywords: 扯淡, 梦想
 ---
