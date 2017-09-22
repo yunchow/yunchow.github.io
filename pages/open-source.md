@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Open Source Projects
+title: 分享是一种精神
 keywords: YUNCHOW
 description: 长的丑就要多读书
 permalink: /open-source/
@@ -11,8 +11,8 @@ permalink: /open-source/
 
 <section class="container">
     <header class="text-center">
-        <h1>Open Source Projects</h1>
-        <p class="lead">I have <span class="repo-count">{{ sorted_repos.size }}</span> projects on Github</p>
+        <h1>OPEN 是一种精神</h1>
+        <p class="lead">总共有 <span class="repo-count">{{ sorted_repos.size }}</span> 个开放项目</p>
     </header>
     <div class="repo-list">
         <!-- Check here for github metadata -->
