@@ -5,7 +5,7 @@ css: ['pages/index.css']
 comments: false
 ---
 
-<section class="banner">
+<section class="banner" style="display:none">
     <div class="collection-head">
         <div class="container">
             <div class="collection-title">
@@ -24,11 +24,11 @@ comments: false
 <section class="container content">
     <div class="columns">
         {% for post in paginator.posts %}
-        <li class="repo-list-item-x">
+        <li class="repo-list-item">
             <h3 class="repo-list-name">
               <a href="{{ post.url }}">{{ post.title }}</a>
             </h3>
-            <p class="repo-list-description">
+            <p class="repo-list-description" style="max-width:98%;">
                 {{ post.excerpt | strip_html | strip }}
             </p>
             <p class="repo-list-meta">
@@ -45,7 +45,7 @@ comments: false
         </li>
         {% endfor %}
     </div>
-    <div class="pagination text-align">
+    <div class="pagination text-align" style="display:none">
       <div class="btn-group">
         {% if paginator.previous_page %}
           {% if paginator.previous_page == 1 %}
