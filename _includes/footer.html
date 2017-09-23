@@ -26,18 +26,40 @@
         </div>
     </footer>
     <!-- / footer -->
-    <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <!-- <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
     <script src="{{ site.url }}/assets/js/geopattern.js"></script>
-    <script src="{{ site.url }}/assets/js/prism.js"></script>
+    <script src="{{ site.url }}/assets/js/prism.js"></script> -->
+    <!-- <script src="{{ site.url }}/assets/js/lunr.min.js"></script>
+    <script src="{{ site.url }}/assets/js/search.js"></script> -->
     <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
     <script>
-      jQuery(document).ready(function($) {
-        // geopattern
-        $('.geopattern').each(function(){
-          $(this).geopattern($(this).data('pattern-id'));
+
+        // lazy load js
+        var isArray=function(obj){return Object.prototype.toString.call(obj)==='[object Array]';}
+    var windowOnLoadEventQueue=[];var scriptOnLoadEventQueue=[];window.onload=function(){for(var aFunc in windowOnLoadEventQueue){windowOnLoadEventQueue[aFunc]();}}
+    function addOnLoad(func){windowOnLoadEventQueue=windowOnLoadEventQueue.concat(func);}
+    var lazyScriptMap={};function lazyLoadScript(src,callback){if(!lazyScriptMap[src]){lazyScriptMap[src]=callback;var scriptNode=document.createElement("script");if('function'===typeof callback){if (!/msie/i.test(navigator.userAgent.toLowerCase())){scriptNode.onload = callback;}scriptNode.onreadystatechange=function(){if("loaded"==scriptNode.readyState||"complete"==scriptNode.readyState){callback();}}}else if(isArray(callback)){var callbackSequence=function(){for(var i=0;i<callback.length;i++){(callback[i])();}};scriptNode.onload=callbackSequence;scriptNode.onreadystatechange=function(){if("loaded"==scriptNode.readyState||"complete"==scriptNode.readyState){callbackSequence();}}}
+    scriptNode.type="text/javascript";scriptNode.src=src;var scriptContainer=document.getElementsByTagName("head")[0];scriptContainer.appendChild(scriptNode);}else{}}
+    function lazyLoadScripts(srcs,callback){var srcNum=srcs.length;var loadingProgress=0;if(srcNum>0){for(var i=0;i<srcNum;i++){var currSrc=srcs[i];lazyLoadScript(currSrc,function(){loadingProgress++;if(srcNum==loadingProgress){if('function'===typeof callback){callback();}else if(isArray(callback)){for(var i=0;i<callback.length;i++){(callback[i])();}}}});}}}
+
+        lazyLoadFunction = function() {
+            lazyLoadScript("{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js");
+            lazyLoadScript("{{ site.url }}/assets/js/geopattern.js");
+            lazyLoadScript("{{ site.url }}/assets/js/prism.js");
+            lazyLoadScript("{{ site.url }}/assets/js/lunr.min.js");
+            lazyLoadScript("{{ site.url }}/assets/js/search.js");
+            console.log("lazyLoad is sucessfully")
+        }
+
+        addOnLoad(lazyLoadFunction);
+
+        jQuery(document).ready(function($) {
+            // geopattern
+            $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+            }); 
+            // hljs.initHighlightingOnLoad();
         });
-       // hljs.initHighlightingOnLoad();
-      });
     </script>
     {% if site.google.analytics_id %}
     <div style="display:none">
