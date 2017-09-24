@@ -12,7 +12,7 @@ permalink: /about/
 
 我热衷写出优雅的代码，我相信相信的力量
 
-![mywife](/imgs/r1.jpg)
+![one choice, one life](/imgs/r1.jpg)
 
 ## 联系
 
