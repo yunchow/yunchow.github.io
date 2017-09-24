@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: 放下过去，勇往直前
 description: 不忘初心方得始终
 keywords: YUNCHOW
 comments: true

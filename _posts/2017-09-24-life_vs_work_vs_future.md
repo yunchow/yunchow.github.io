@@ -37,7 +37,8 @@ keywords: 生活, 工作, 未来, 职业发展, 未来规划
 「人没有理想，跟咸鱼有什么区别」。想要实现理想就要敢打敢拼，还需要有不顾一切的的魄力。
 
 
-
+> You got to put the past behind you before you can move on.
+> 放下过去，继续前行
 
 
 

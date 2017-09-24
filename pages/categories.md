@@ -1,6 +1,6 @@
 ---
 layout: categories
-title: Categories
+title: 生活就像一盒巧克力，你不会知道下一颗是什么
 description: 文章的分类就是这里了
 keywords: 分类
 comments: false
