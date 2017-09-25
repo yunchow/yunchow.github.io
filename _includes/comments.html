@@ -75,16 +75,27 @@
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
         <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
         <script>
-        var gitment = new Gitment({
-            id: '{{ page.url }}',
-            owner: '{{ site.gitment.owner }}',
-            repo: '{{ site.gitment.repo }}',
-            oauth: {
-                client_id: '{{ site.gitment.oauth.client_id }}',
-                client_secret: '{{ site.gitment.oauth.client_secret }}',
-            },
-        })
-        gitment.render('container')
+        var renderComment = function() {
+          console.log("renderComment is trying");
+          if(!!!Gitment) {
+            console.log("renderComment isn't ready");
+            setTimeout(renderComment, 1000);
+            return;
+          }
+          console.log("renderComment is ready");
+          var gitment = new Gitment({
+              id: '{{ page.url }}',
+              owner: '{{ site.gitment.owner }}',
+              repo: '{{ site.gitment.repo }}',
+              oauth: {
+                  client_id: '{{ site.gitment.oauth.client_id }}',
+                  client_secret: '{{ site.gitment.oauth.client_secret }}',
+              },
+          })
+          gitment.render('container');
+          console.log("renderComment is completed");
+        }
+        setTimeout(renderComment, 3000);
         </script>
   {% endcase %}
 {% endif %}
