@@ -84,10 +84,10 @@ repository: yunchow/yunchow.github.io
 #      Comments    #
 # ---------------- #
 # support provider: disqus, gitment
-# comments_provider: gitment
+comments_provider: disqus
 # https://disqus.com
-# disqus:
-#     username: yunchow
+disqus:
+    username: yunchow
 # https://imsun.net/posts/gitment-introduction/
 # gitment:
 #     owner: YUNCHOW
