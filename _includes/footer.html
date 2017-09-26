@@ -29,23 +29,10 @@
     <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js" defer="defer"></script>
     <script src="{{ site.url }}/assets/js/geopattern.js" defer="defer"></script>
     <script src="{{ site.url }}/assets/js/prism.js" defer="defer"></script>
-    <script src="http://static.tctip.com/js/tctip.min.js" defer="defer"></script>
     <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
     {% if site.google.analytics_id %}
     <div style="display:none">
     <script>
-        window.tctipConfig = {
-            imagePrefix:  "",
-            cssPrefix:      "",
-            staticPrefix: "http://static.tctip.com",
-            buttonImageId: Math.ceil(Math.random()*8) + 1, //这里可以用一个固定的数字代替随机数
-            buttonTip:    "打赏",
-            list:{
-             alipay: { qrimg: "http://tctip.com/img/alipayqr.png"},    //qrimg需要修改为自己的图片链接
-             weixin:{qrimg: "http://littlebtc.com/images/yeshen.png"}  //qrimg需要修改为自己的图片链接
-            }
-         };
-
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
