@@ -100,13 +100,13 @@ gitment:
         client_id: b9b3321130883bd874ae
         client_secret: b6625ead5f7e1e38e0fe34e609130a934b955462
 # 在使用其它评论组件时可点击显示 Disqus
-# lazy_load_disqus : true
+lazy_load_disqus : false
 
 # ---------------- #
 #    Analytics     #
 # ---------------- #
 google:
     analytics_id: UA-106899440-1
-baidu:
+baidu_tongji:
     analytics_id: 4ef0c059eb528a0911c561c042f19ae7
 
