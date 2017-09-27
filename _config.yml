@@ -70,7 +70,7 @@ gems:
 #     - jekyll-html-pipeline
     - jekyll-paginate
     - jekyll-sitemap
-#   - jekyll-feed
+    - jekyll-feed
     - jemoji
 #     - jekyll-mentions
 collections:
@@ -83,8 +83,12 @@ repository: yunchow/yunchow.github.io
 # ---------------- #
 #      Comments    #
 # ---------------- #
-# support provider: disqus, gitment
-# comments_provider: gitment
+# support provider: disqus, gitment, livere
+
+# https://livere.com/introduce
+comments_provider: livere
+livere:
+    user_token: MTAyMC8zMTA3Mi83NjIw
 # https://disqus.com
 disqus:
     username: yunchow
@@ -103,3 +107,6 @@ gitment:
 # ---------------- #
 google:
     analytics_id: UA-106899440-1
+baidu:
+    analytics_id: 4ef0c059eb528a0911c561c042f19ae7
+
