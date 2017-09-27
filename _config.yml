@@ -84,7 +84,7 @@ repository: yunchow/yunchow.github.io
 #      Comments    #
 # ---------------- #
 # support provider: disqus, gitment
-comments_provider: gitment
+# comments_provider: gitment
 # https://disqus.com
 disqus:
     username: yunchow
