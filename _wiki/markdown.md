@@ -49,6 +49,11 @@ keywords: Markdown
 
 * 无序列表项 3
 
+```
+- [x] 任务列表 1
+- [ ] 任务列表 2
+```
+
 - [x] 任务列表 1
 - [ ] 任务列表 2
 
@@ -99,17 +104,15 @@ Tips: `#` 与标题中间要加空格。
 
 ### 代码块
 
-```python
+```
+` ` `
 print 'Hello, World!'
+` ` `
 ```
 
-1. list item1
-
-2. list item2
-
-   ```python
-   print 'hello'
-   ```
+```
+print 'Hello, World!'
+```
 
 ### 图片
 
@@ -128,15 +131,22 @@ print 'Hello, World!'
 * [目录](#目录)
 
 ### Emoji
-
+```
+:camel:
+:blush:
+:smile:
+```
 :camel:
 :blush:
 :smile:
 
 ### Footnotes
-
+```
 This is a text with footnote[^1].
+```
 
 [^1]: Here is the footnote 1 definition.
+
+
 
 
