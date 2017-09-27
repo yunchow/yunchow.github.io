@@ -107,6 +107,6 @@ lazy_load_disqus : false
 # ---------------- #
 google:
     analytics_id: UA-106899440-1
-baidu_tongji:
+baidu:
     analytics_id: 4ef0c059eb528a0911c561c042f19ae7
 
