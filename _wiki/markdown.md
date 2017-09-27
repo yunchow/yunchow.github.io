@@ -144,6 +144,7 @@ print 'Hello, World!'
 ```
 This is a text with footnote[^1].
 ```
+This is a text with footnote[^1].
 
 [^1]: Here is the footnote 1 definition.
 
