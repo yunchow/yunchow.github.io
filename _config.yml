@@ -108,5 +108,5 @@ lazy_load_disqus : false
 google:
     analytics_id: UA-106899440-1
 baidu:
-    analytics_id: 4ef0c059eb528a0911c561c042f19ae7
+    analytics_id: 39bfa04d70f4fe8f9613606a9052b500
 
