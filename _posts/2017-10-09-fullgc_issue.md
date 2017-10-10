@@ -14,7 +14,7 @@ keywords: FGC, java, gc, full gc, oom
 
 现在国内的互联网企业基本都是用的 CMS 回收算法，这里简单介绍一下，想要了解的更多更深入，可以参考这篇管方的 [Memory Management White Paper](http://www.oracle.com/technetwork/java/javase/tech/memorymanagement-whitepaper-1-150020.pdf)
 
-![CMS_GC_Process.png](imgs/CMS_GC_Process.png)
+![CMS_GC_Process.png](/imgs/CMS_GC_Process.png)
 
 一个典型的 JVM 参数设置如下：
 ```java
@@ -100,7 +100,8 @@ ecs]
 
 关于 GC 日志的详解参考这篇文章：[Understanding CMS GC Logs](https://blogs.oracle.com/poonam/understanding-cms-gc-logs)
 
-##　原因分析
+
+## 原因分析
 
 JVM 频繁的 GC 说明应用的内存不够用了，因为 JVM 启动 GC 也是需要内存的，但是内存是因为什么原因被耗尽，这需要排查系统的日志，最后排查的结果是因为线上的 RPC 调用导致大量的长连接超时，占用了大量的内存，接近 2G，RPC 超时的原因是服务端在进行压测引起的。但是应用因为 Docker 化的原因，默认配置的内存只有 2G，从而导致了频繁的触发 Full GC。解决的办法有如下 2 点：
 
