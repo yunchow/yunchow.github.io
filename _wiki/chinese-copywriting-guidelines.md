@@ -1,7 +1,7 @@
 ---
 layout: wiki
 title: 中文排版
-categories: Copywriting
+categories: wiki
 description: 中文排版
 keywords: 中文排版
 ---
