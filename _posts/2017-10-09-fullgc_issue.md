@@ -110,7 +110,10 @@ JVM 频繁的 GC 说明应用的内存不够用了，因为 JVM 启动 GC 也是
 
 综合考虑各方面因素选择方案 2。
 
+## 参考
 
 [^1]: [CMS GC 日志](http://www.cnblogs.com/kakaxisir/p/6209266.html)
+
+
 
 
