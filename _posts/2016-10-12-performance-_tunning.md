@@ -132,7 +132,10 @@ num     #instances         #bytes  class name
 ### jmap -permstat pid
 用来搜集持久代的统计信息，执行时间很慢
 
-### jmap -dump:format=b,file=heap.bin pid
+### jmap -dump pid
+```
+jmap -dump:format=b,file=heap.bin pid
+```
 导出堆内存的快照，便于对内存进行离线分析，但是需要借助一些第三方的工作，比如：MAT, Jprofiler
 
 * 堆内存概要汇总信息
@@ -513,7 +516,7 @@ java堆用于存储对象实例，我们只要不断的创建对象，并且保�
 方法区溢出也是一种常见的内存溢出异常，一个类如果要被垃圾收集器回收，判定条件是很苛刻的。在经常动态生成大量Class的应用中，要特别注意这点。
 
 ## 堆内存溢出
-### Java.lang.OutOfMemoryError: Java heap space
+### OutOfMemoryError: Java heap space
 这种是java堆内存不够，一个原因是真不够，另一个原因是程序中有死循环；
 如果是java堆内存不够的话，可以通过调整JVM下面的配置来解决：
 
@@ -522,7 +525,7 @@ java堆用于存储对象实例，我们只要不断的创建对象，并且保�
 -Xmx4096M
 ```
 
-### java.lang.OutOfMemoryError: GC overhead limit exceeded
+### OutOfMemoryError: GC overhead limit exceeded
 JDK6新增错误类型，当GC为释放很小空间占用大量时间时抛出；一般是因为堆太小，导致异常的原因，没有足够的内存。
 
 * 查看系统是否有使用大内存的代码或死循环
@@ -532,7 +535,7 @@ JDK6新增错误类型，当GC为释放很小空间占用大量时间时抛出�
 -XX:-UseGCOverheadLimit
 ```
 
-### java.lang.OutOfMemoryError: PermGen space
+### OutOfMemoryError: PermGen space
 这种是P区内存不够，可通过调整JVM的配置
 ```
 -XX:MaxPermSize=128m
@@ -541,13 +544,13 @@ JDK6新增错误类型，当GC为释放很小空间占用大量时间时抛出�
 
 JVM的Perm区主要用于存放Class和Meta信息的,Class在被Loader时就会被放到PermGen space，这个区域成为年老代，GC在主程序运行期间不会对年老区进行清理，默认是64M大小，当程序需要加载的对象比较多时，超过64M就会报这部分内存溢出了，需要加大内存分配，一般 128m 足够。 
 
-### java.lang.OutOfMemoryError: Direct buffer memory
+### OutOfMemoryError: Direct buffer memory
 调整 -XX:MaxDirectMemorySize= 参数，如添加JVM配置
 ```
 -XX:MaxDirectMemorySize=128m
 ```
 
-### java.lang.OutOfMemoryError: unable to create new native thread
+### OutOfMemoryError: unable to create new native thread
 Stack空间不足以创建额外的线程，要么是创建的线程过多，要么是Stack空间确实小了。 
 
 由于JVM没有提供参数设置总的stack空间大小，但可以设置单个线程栈的大小；而系统的用户空间一共是3G，除了Text/Data/BSS /MemoryMapping几个段之外，Heap和Stack空间的总量有限，是此消彼长的。因此遇到这个错误，可以通过两个途径解决： 
@@ -555,7 +558,7 @@ Stack空间不足以创建额外的线程，要么是创建的线程过多，要
 * 通过 -Xss启动参数减少单个线程栈大小，这样便能开更多线程（当然不能太小，太小会出现StackOverflowError）； 
 * 通过-Xms -Xmx 两参数减少Heap大小，将内存让给Stack（前提是保证Heap空间够用）。 
 
-### java.lang.StackOverflowError 
+### StackOverflowError 
 这也内存溢出错误的一种，即线程栈的溢出，要么是方法调用层次过多（比如存在无限递归调用），要么是线程栈太小。 
 
 优化程序设计，减少方法调用层次；调整 -Xss 参数增加线程栈大小。
