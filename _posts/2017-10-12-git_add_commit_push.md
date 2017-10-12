@@ -27,9 +27,8 @@ git add . && git commit -am add && git push
 这样我们可以将文件提交至远程仓库。但是还是感觉不完美，因为每次要打的字太多。有一个办法就是将上面这一行命令起一个别名即可
 ```
 gitpush() {
-    git add .
-    git commit -m "$*"
-    git push
+  git status
+  git add . && git commit -m "$*" && git push
 }
 alias gp=gitpush
 ```
