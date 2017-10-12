@@ -13,9 +13,10 @@ git commit -m "add new file"
 git push
 ```
 
-这是最常见的操作，在提交前我们可能还需要进行 diff 操作
+这是最常见的操作，在提交前我们可能还需要进行 status 和 diff 操作
 
 ```
+git status
 git diff
 ```
 
