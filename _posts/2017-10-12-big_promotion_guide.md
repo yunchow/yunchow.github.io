@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 怎样设计一个就能支撑百万流量的系统
+title: 怎样设计一个就能支撑每秒百万流量的系统
 categories: [技术]
-description: 怎样设计一个就能支撑百万流量的系统
+description: 怎样设计一个就能支撑每秒百万流量的系统
 keywords: 秒杀, 大促, 双11, 架构
 ---
 
