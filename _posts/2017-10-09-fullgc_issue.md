@@ -112,6 +112,36 @@ JVM 频繁的 GC 说明应用的内存不够用了，因为 JVM 启动 GC 也是
 
 综合考虑各方面因素选择方案 2。
 
+## 分析工具
+
+在遇到 OOM 的时候，我们需要借助一些工具去分析 Heap， 常见的比如 
+
+* [MAT](https://www.eclipse.org/mat/)
+* [Jprofiler](https://www.ej-technologies.com/products/jprofiler/overview.html)
+* VisualVM
+
+当然还有 JDK 自带的工具：
+
+* jps 查看 JVM 进程
+* jstat 实时监测 JVM
+* jmap 用来分析 Heap 对象的内存占用情况，排查 OOM 的利器
+* jhat 对 dump 出来的堆文件进行在线分析，可以用 MAT 代替
+* jstack 分析 Thread 运行情况，分析死锁
+* jinfo 查看 JVM 进程的配置信息
+
+详细的用法可以查看帮助，或者查看这 3 篇文章
+
+* [JVM性能调优监控工具jps、jstack、jmap、jhat、jstat、hprof使用详解](http://blog.csdn.net/dragonassassin/article/details/51010947)
+* [JVM性能调优监控工具jps、jstack、jmap、jhat、jstat、hprof使用详解](https://my.oschina.net/feichexia/blog/196575)
+* [内存分析工具 MAT 的使用](http://blog.csdn.net/aaa2832/article/details/19419679)
+
+## Linux 分析
+
+* top 查看系统整体性能情况
+* free -m 查看内存占用
+* uptime 查看 CPU 负载情况
+* iostat
+
 ## 参考
 
 [^1]: [CMS GC 日志](http://www.cnblogs.com/kakaxisir/p/6209266.html)

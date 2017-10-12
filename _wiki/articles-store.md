@@ -30,6 +30,9 @@ keywords: 文章收录
 ## 架构
 * [架构蓝图--软件架构『4+1』视图模型](https://www.ibm.com/developerworks/cn/rational/r-4p1-view/)
 
+## IOS
+* [WebApp](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4)
+
 ## 其他
 * [使用 Maven enforcer 插件检查依赖冲突](http://www.oolap.com/2015-10-22-use-maven-enforcer-plugin-check-deps)
 
