@@ -28,13 +28,13 @@ Java 应用常见的性能优化包括了如下几大方面
 ## jps
 jps 用于查看系统中的 Java 进程，作用等同于 ps -ef | grep java
 
-#### jps -h
+### jps -h
 查看帮助信息
 
 ## jmap
 jmap 用于查看 JVM 堆内存的情况，包括了堆内存汇总、对象大小、类加载、永久代（方法区，常量池）等相关信息，jmap 还可以 dump 堆快照到一个二进制文件进行离线分析。
 
-#### jmap -heap pid
+### jmap -heap pid
 打印进程堆内存的汇总信息，这是一个概要的输出，可以看到当前的 JVM 用的是哪个 GC 算法和一些简单的配置比例参数，还可以看到堆内存的分区和使用情况，一个典型的 JVM6 的输出是这样的
 
 **注意：这个命令可能会导致 Java 进程挂起**
@@ -94,7 +94,7 @@ Perm Generation:
    61.078614151448264% used
 ```
 
-#### jmap -histo pid
+### jmap -histo pid
 打印 Java 对象占用的堆内存详细列表，会按占用大小降序排列
 
 ```
@@ -129,10 +129,10 @@ num     #instances         #bytes  class name
   27:        168645        6745800  java.util.LinkedHashMap$Entry
 ```
 
-#### jmap -permstat pid
+### jmap -permstat pid
 用来搜集持久代的统计信息，执行时间很慢
 
-#### jmap -dump:format=b,file=heap.bin pid
+### jmap -dump:format=b,file=heap.bin pid
 导出堆内存的快照，便于对内存进行离线分析，但是需要借助一些第三方的工作，比如：MAT, Jprofiler
 
 * 堆内存概要汇总信息
@@ -175,7 +175,7 @@ jhat -J-mx512m -port 7000 <file>
 -printcompilation
 ```
 
-#### jstat -gcutil pid 1000
+### jstat -gcutil pid 1000
 
 每秒打印出 GC 情况，如下
 
@@ -393,14 +393,14 @@ file locks                      (-x) unlimited
 # 数据库篇
 
 ## Mysql 索引优化
-#### left-most 最左前缀原则
+### left-most 最左前缀原则
 如果存在联合索引 (A, B, C)，那么查询能够使用索引的情况有这几种
 
 * A, B, C
 * A, B
 * A
 
-#### 执行计划
+### 执行计划
 explain select * from xxx;
 
 ```
@@ -487,7 +487,7 @@ for i in `cat oid.txt`; do curl -d "outerId=$i&bizType=3001" localhost:7001/tool
 ## OOM
 OutOfMemoryError 异常除了程序计数器外，虚拟机内存的其他几个运行时区域都有发生 OutOfMemoryError(OOM) 异常的可能
 
-#### Java Heap 溢出
+### Java Heap 溢出
 一般的异常信息：java.lang.OutOfMemoryError:Java heap spacess
 
 java堆用于存储对象实例，我们只要不断的创建对象，并且保证GC Roots到对象之间有可达路径来避免垃圾回收机制清除这些对象，就会在对象数量达到最大堆容量限制后产生内存溢出异常。
@@ -495,17 +495,17 @@ java堆用于存储对象实例，我们只要不断的创建对象，并且保�
 如果是内存泄漏，可进一步通过工具查看泄漏对象到GC Roots的引用链。于是就能找到泄漏对象时通过怎样的路径与GC Roots相关联并导致垃圾收集器无法自动回收。
 如果不存在泄漏，那就应该检查虚拟机的参数(-Xmx与-Xms)的设置是否适当。
 
-#### 虚拟机栈和本地方法栈溢出
+### 虚拟机栈和本地方法栈溢出
 如果线程请求的栈深度大于虚拟机所允许的最大深度，将抛出StackOverflowError异常。
 如果虚拟机在扩展栈时无法申请到足够的内存空间，则抛出OutOfMemoryError异常
 这里需要注意当栈的大小越大可分配的线程数就越少。
 
-#### 运行时常量池溢出
+### 运行时常量池溢出
 异常信息：java.lang.OutOfMemoryError:PermGen space
 
 如果要向运行时常量池中添加内容，最简单的做法就是使用String.intern()这个Native方法。该方法的作用是：如果池中已经包含一个等于此String的字符串，则返回代表池中这个字符串的String对象；否则，将此String对象包含的字符串添加到常量池中，并且返回此String对象的引用。由于常量池分配在方法区内，我们可以通过-XX:PermSize和-XX:MaxPermSize限制方法区的大小，从而间接限制其中常量池的容量。
 
-#### 方法区溢出
+### 方法区溢出
 方法区用于存放Class的相关信息，如类名、访问修饰符、常量池、字段描述、方法描述等。
 
 异常信息：java.lang.OutOfMemoryError:PermGen space
@@ -513,7 +513,7 @@ java堆用于存储对象实例，我们只要不断的创建对象，并且保�
 方法区溢出也是一种常见的内存溢出异常，一个类如果要被垃圾收集器回收，判定条件是很苛刻的。在经常动态生成大量Class的应用中，要特别注意这点。
 
 ## 堆内存溢出
-#### Java.lang.OutOfMemoryError: Java heap space
+### Java.lang.OutOfMemoryError: Java heap space
 这种是java堆内存不够，一个原因是真不够，另一个原因是程序中有死循环；
 如果是java堆内存不够的话，可以通过调整JVM下面的配置来解决：
 
@@ -522,7 +522,7 @@ java堆用于存储对象实例，我们只要不断的创建对象，并且保�
 -Xmx4096M
 ```
 
-#### java.lang.OutOfMemoryError: GC overhead limit exceeded
+### java.lang.OutOfMemoryError: GC overhead limit exceeded
 JDK6新增错误类型，当GC为释放很小空间占用大量时间时抛出；一般是因为堆太小，导致异常的原因，没有足够的内存。
 
 * 查看系统是否有使用大内存的代码或死循环
@@ -532,7 +532,7 @@ JDK6新增错误类型，当GC为释放很小空间占用大量时间时抛出�
 -XX:-UseGCOverheadLimit
 ```
 
-#### java.lang.OutOfMemoryError: PermGen space
+### java.lang.OutOfMemoryError: PermGen space
 这种是P区内存不够，可通过调整JVM的配置
 ```
 -XX:MaxPermSize=128m
@@ -541,13 +541,13 @@ JDK6新增错误类型，当GC为释放很小空间占用大量时间时抛出�
 
 JVM的Perm区主要用于存放Class和Meta信息的,Class在被Loader时就会被放到PermGen space，这个区域成为年老代，GC在主程序运行期间不会对年老区进行清理，默认是64M大小，当程序需要加载的对象比较多时，超过64M就会报这部分内存溢出了，需要加大内存分配，一般 128m 足够。 
 
-#### java.lang.OutOfMemoryError: Direct buffer memory
+### java.lang.OutOfMemoryError: Direct buffer memory
 调整 -XX:MaxDirectMemorySize= 参数，如添加JVM配置
 ```
 -XX:MaxDirectMemorySize=128m
 ```
 
-#### java.lang.OutOfMemoryError: unable to create new native thread
+### java.lang.OutOfMemoryError: unable to create new native thread
 Stack空间不足以创建额外的线程，要么是创建的线程过多，要么是Stack空间确实小了。 
 
 由于JVM没有提供参数设置总的stack空间大小，但可以设置单个线程栈的大小；而系统的用户空间一共是3G，除了Text/Data/BSS /MemoryMapping几个段之外，Heap和Stack空间的总量有限，是此消彼长的。因此遇到这个错误，可以通过两个途径解决： 
@@ -555,7 +555,7 @@ Stack空间不足以创建额外的线程，要么是创建的线程过多，要
 * 通过 -Xss启动参数减少单个线程栈大小，这样便能开更多线程（当然不能太小，太小会出现StackOverflowError）； 
 * 通过-Xms -Xmx 两参数减少Heap大小，将内存让给Stack（前提是保证Heap空间够用）。 
 
-#### java.lang.StackOverflowError 
+### java.lang.StackOverflowError 
 这也内存溢出错误的一种，即线程栈的溢出，要么是方法调用层次过多（比如存在无限递归调用），要么是线程栈太小。 
 
 优化程序设计，减少方法调用层次；调整 -Xss 参数增加线程栈大小。
