@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Linux/Java 性能优化
+title: 我怎么做 Java 应用性能优化
 categories: [技术]
-description: Linux Java性能优化
+description: 我怎么做 Java 应用性能优化
 keywords: Java性能优化, Linux性能优化
 ---
 
