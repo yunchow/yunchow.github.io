@@ -6,6 +6,8 @@ description: Git 提交小技巧
 keywords: git, git push
 ---
 
+> Git 是一个分布式的版本管理工具，用了 git 再也无法回到使用 svn 的日子，我想这就是进步吧
+
 在我们新增一个文件后，然后将更新提交至远程仓库，我们需要如下几步
 ```
 git status
