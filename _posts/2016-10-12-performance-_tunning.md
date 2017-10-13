@@ -195,26 +195,73 @@ jhat -J-mx512m -port 7000 <file>
 
 ## jstack
 
-查看线程相关的信息，常用来分析死锁
+
+查看线程相关的信息
+
+### jstack -l pid
+分析死锁
 
 ```
-./jstack -h
-Usage:
-    jstack [-l] <pid>
-        (to connect to running process)
-    jstack -F [-m] [-l] <pid>
-        (to connect to a hung process)
-    jstack [-m] [-l] <executable> <core>
-        (to connect to a core file)
-    jstack [-m] [-l] [server_id@]<remote server IP or hostname>
-        (to connect to a remote debug server)
+$./jstack -l 213676 | head
+2017-10-13 10:04:18
+Full thread dump OpenJDK (Taobao) 64-Bit Server VM (20.0-b12-internal mixed mode):
 
-Options:
-    -F  to force a thread dump. Use when jstack <pid> does not respond (process is hung)
-    -m  to print both java and native frames (mixed mode)
-    -l  long listing. Prints additional information about locks
-    -h or -help to print this help message
+"http-bio-7001-exec-11" daemon prio=10 tid=0x00002aaab759d000 nid=0x1bd3e waiting on condition [0x0000000056254000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+  at sun.misc.Unsafe.park(Native Method)
+  - parking to wait for  <0x000000079180e650> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+  at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+  at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+  at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:424)
 ```
+
+### 分析线程负载
+找到负载最高的 Java 进程编号
+```
+top
+```
+
+* P 按 CPU 排序
+* M 按内存排序
+* T 按运行时间排序
+
+找到这个进程下的所有的线程
+```
+top -H -p 213676
+```
+
+将负载高的或者运行时间最长的线程号转换成 16 进制
+```
+printf '%x\n' 215414
+34976
+```
+根据线程号找到对应的代码
+```
+./jstack 213676 | fgrep -A 30 34976
+```
+得到的输出如下
+```
+"http-bio-7001-exec-1" daemon prio=10 tid=0x00002aaaccfba000 nid=0x34976 waiting on condition [0x00000000505f8000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+  at sun.misc.Unsafe.park(Native Method)
+  - parking to wait for  <0x000000079180e650> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+  at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+  at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2025)
+  at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:424)
+  at org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:86)
+  at org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:32)
+  at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:945)
+  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+  at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+  at java.lang.Thread.run(Thread.java:662)
+
+"http-bio-7001-AsyncTimeout" daemon prio=10 tid=0x00002aaab8080000 nid=0x34975 waiting on condition [0x00000000504f7000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+  at java.lang.Thread.sleep(Native Method)
+  at org.apache.tomcat.util.net.JIoEndpoint$AsyncTimeout.run(JIoEndpoint.java:152)
+  at java.lang.Thread.run(Thread.java:662)
+```
+然后根据这个堆栈找到对应的代码分析问题吧！
 
 ## jinfo
 打印系统配置信息，如下
