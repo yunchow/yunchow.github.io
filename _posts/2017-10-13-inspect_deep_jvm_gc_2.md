@@ -88,6 +88,7 @@ keywords: JVM, GC, Java
 年轻代使用 CMS 和使用并行回收情况一致，采用的是并行的复制回收算法，注意还是会有应用短暂挂起的现象。
 
 #### 老年代使用 CMS
-
+CMS 在老年代的大部分回收过程都是与应用线程同时执行的，概要过程如下图所示
+![cms_process.png](/imgs/cms_process.png)
 
 

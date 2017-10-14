@@ -16,7 +16,7 @@ keywords: FGC, java, gc, full gc, oom
 
 现在国内的互联网企业基本都是用的 CMS 回收算法，这里简单介绍一下，想要了解的更多更深入，可以参考这篇管方的 [Memory Management White Paper](http://www.oracle.com/technetwork/java/javase/tech/memorymanagement-whitepaper-1-150020.pdf)
 
-![CMS_GC_Process.png](/imgs/CMS_GC_Process.png)
+![CMS_GC_Process.png](/imgs/cms_process.png)
 
 一个典型的 JVM 参数设置如下：
 ```java
