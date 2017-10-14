@@ -171,7 +171,7 @@ jstat -gcutil pid 1000
 ## GC 重要的配置参数
 #### 垃圾回收器的选择
 参数|垃圾回收器
--------|--------
+|-------|--------|
 –XX:+UseSerialGC|串行回收器
 –XX:+UseParallelGC|并行回收器
 –XX:+UseParallelOldGC|并行压缩回收器
@@ -179,7 +179,7 @@ jstat -gcutil pid 1000
 
 #### 垃圾回收器统计
 参数|描述
--------|--------
+|-------|--------|
 –XX:+PrintGC|打印每一次的回收基本信息
 –XX:+PrintGCDetails|打印每一次回收的详细信息
 –XX:+PrintGCTimeStamps|打印垃圾回收的时间信息
@@ -187,7 +187,7 @@ jstat -gcutil pid 1000
 
 #### 堆大小参数
 参数|默认值|描述
----|---|---
+|---|---|---|
 –Xmsn||堆的初始大小，单位字节
 –Xmxn||堆的最大大小，单位是字节
 –XX:MinHeapFreeRatio=minimum|40|
@@ -199,14 +199,14 @@ jstat -gcutil pid 1000
 
 #### 并行回收器参数
 参数|默认值|描述
----|---|---
+|---|---|---|
 –XX:ParallelGCThreads=n|CPU 的数量|并行回收的线程数
 –XX:MaxGCPauseMillis=n|无|期望的暂停的时间，单位毫秒
 –XX:GCTimeRatio=n|99|设置全局总共花在垃圾回收上的时间，公式 1/(1+n)
 
 #### CMS 参数
 参数|默认值|描述
----|---|---
+|---|---|---|
 –XX:+CMSIncrementalMode|未开启|开启增量模式
 –XX:+CMSIncrementalPacing|未开启|
 –XX:ParallelGCThreads=n|CPU 数量|年轻代和老年代的并发线程数
