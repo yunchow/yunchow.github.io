@@ -9,6 +9,8 @@ keywords: 文章收录
 ## JVM
 * [Java 垃圾回收手册](https://plumbr.eu/java-garbage-collection-handbook)
 * [理解 CMS GC 日志](http://www.cnblogs.com/kakaxisir/p/6209266.html)
+* [深入理解 Java G1 垃圾收集器](http://blog.jobbole.com/109170/)
+* [JVM 内存管理模型](http://www.oracle.com/technetwork/java/javase/tech/memorymanagement-whitepaper-1-150020.pdf)
 
 ## Scala
 * [Scala学习资料大全](https://stackoverflow.com/tags/scala/info)
