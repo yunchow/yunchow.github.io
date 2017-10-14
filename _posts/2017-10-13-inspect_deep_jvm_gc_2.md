@@ -170,6 +170,7 @@ jstat -gcutil pid 1000
 
 ## GC 重要的配置参数
 #### 垃圾回收器的选择
+
 | 参数 | 垃圾回收器 |
 | ------- | -------- |
 | –XX:+UseSerialGC | 串行回收器 |
@@ -178,7 +179,8 @@ jstat -gcutil pid 1000
 | –XX:+UseConcMarkSweepGC | CMS 回收器 |
 
 #### 垃圾回收器统计
-参数|描述
+
+|参数|描述|
 |-------|--------|
 |–XX:+PrintGC|打印每一次的回收基本信息|
 |–XX:+PrintGCDetails|打印每一次回收的详细信息|
