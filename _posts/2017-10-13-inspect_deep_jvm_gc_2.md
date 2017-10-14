@@ -105,8 +105,128 @@ CMS 的回收过程会经过几个过程
 
 重新标记虽然增加了 GC 的处理复杂度，但是这样做却减少了应用的暂停时间。
 
-CMS 回收器是惟一的不会去压缩空间的回收器，所以他会产生大量的空间碎片，如下图
+CMS 回收器是惟一的不会去压缩碎片空间的回收器，所以他会产生大量的空间碎片，如下图
 ![cms_compact.png](/imgs/cms_compact.png)
 
+这样做会节约时间，但是会导致内存空间不连续。
+另一个缺点就是 CMS 会要求更大的堆空间。
+不像别的回收器，CMS 并不是在老年代的空间满的时候才开始回收，他会提前进行回收，从而避免堆空间满的情况，可以通过参数配置回收水位的百分比。
+```
+-XX:CMSInitialtingOccupancyFraction=n
+```
+n 是老年代大小的百分比，默认是 68。
+
+#### CMS 回收配置参数
+通过下面的参数显示指定使用 CMS 回收器。
+```
+-XX:+UseConcMarkSweepGC
+```
+打开增量模式
+```
+-XX:+CMSIncrementalMode
+```
+
+## OutOfMemoryError
+当 JVM 内存空间不足时会抛出这个异常，具体的原因分成如下几种
+
+#### Java heap space
+这种情况是堆空间不够导致，可通过下面参数调整
+```
+-Xmx4096Mb
+```
+
+#### PermGen space
+这是原因持久代的空间不足所致，通过这个参数设置
+```
+-XX:MaxPermSize=n
+```
+n 就是要设置的大小，如 128Mb
+
+#### Requested array size exceeds VM limit
+这是因数申请的数组大小超过了堆空间所致，原因是堆的空间太小，调大即可。
+
+## 垃圾回收调优工具
+#### 打印 GC 明细
+对线上系统开启 GC 明细日志
+```
+-XX:+PrintGCDetails
+```
+
+#### 打印 GC 时间
+```
+-XX:+PrintGCTimeStamps
+```
+#### jmap
+把堆内存导出后，利用三方工具进行离线分析，如 MAT、ViualVM
+```
+jmap -dump:format=bin,file=/tmp/heap.dump pid
+```
+
+#### jstat
+实时查看 GC 情况
+```
+jstat -gcutil pid 1000
+```
+
+## GC 重要的配置参数
+#### 垃圾回收器的选择
+参数|垃圾回收器
+-------|--------
+–XX:+UseSerialGC|串行回收器
+–XX:+UseParallelGC|并行回收器
+–XX:+UseParallelOldGC|并行压缩回收器
+–XX:+UseConcMarkSweepGC|CMS 回收器
+
+#### 垃圾回收器统计
+参数|描述
+-------|--------
+–XX:+PrintGC|打印每一次的回收基本信息
+–XX:+PrintGCDetails|打印每一次回收的详细信息
+–XX:+PrintGCTimeStamps|打印垃圾回收的时间信息
+-Xloggc:/tmp/gc.log|保存 GC 日志到文件
+
+#### 堆大小参数
+参数|默认值|描述
+---|---|---
+–Xmsn||堆的初始大小，单位字节
+–Xmxn||堆的最大大小，单位是字节
+–XX:MinHeapFreeRatio=minimum|40|
+–XX:MaxHeapFreeRatio=maximum|70|
+–XX:NewSize=n|平台独立|年轻代默认初始大小，单位字节
+–XX:NewRatio=n|客户端模式为 2，服务端模式为 8|老年代和年轻代的比值
+–XX:SurvivorRatio=n|32|Eden 与存活区的比值
+–XX:MaxPermSize=n|平台独立|持久代最大大小
+
+#### 并行回收器参数
+参数|默认值|描述
+---|---|---
+–XX:ParallelGCThreads=n|CPU 的数量|并行回收的线程数
+–XX:MaxGCPauseMillis=n|无|期望的暂停的时间，单位毫秒
+–XX:GCTimeRatio=n|99|设置全局总共花在垃圾回收上的时间，公式 1/(1+n)
+
+#### CMS 参数
+参数|默认值|描述
+---|---|---
+–XX:+CMSIncrementalMode|未开启|开启增量模式
+–XX:+CMSIncrementalPacing|未开启|
+–XX:ParallelGCThreads=n|CPU 数量|年轻代和老年代的并发线程数
+
+## 实例举例
+```
+CATALINA_OPTS="-server"
+CATALINA_OPTS="${CATALINA_OPTS} -Xms4g -Xmx4g"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:PermSize=256m -XX:MaxPermSize=256m"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:MetaspaceSize=512m -XX:MaxMetaspaceSize=512m"
+CATALINA_OPTS="${CATALINA_OPTS} -Xmn2g"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:MaxDirectMemorySize=1g"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:SurvivorRatio=10"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:+UseConcMarkSweepGC -XX:+UseCMSCompactAtFullCollection -XX:CMSMaxAbortablePrecleanTime=5000"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:+CMSClassUnloadingEnabled -XX:CMSInitiatingOccupancyFraction=80 -XX:+UseCMSInitiatingOccupancyOnly"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:+ExplicitGCInvokesConcurrent -Dsun.rmi.dgc.server.gcInterval=2592000000 -Dsun.rmi.dgc.client.gcInterval=2592000000"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:ParallelGCThreads=${CPU_COUNT}"
+CATALINA_OPTS="${CATALINA_OPTS} -Xloggc:${MIDDLEWARE_LOGS}/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps"
+CATALINA_OPTS="${CATALINA_OPTS} -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${MIDDLEWARE_LOGS}/java.hprof"
+
+```
 
 
