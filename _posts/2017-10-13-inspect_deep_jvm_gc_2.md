@@ -170,12 +170,12 @@ jstat -gcutil pid 1000
 
 ## GC 重要的配置参数
 #### 垃圾回收器的选择
-|参数|垃圾回收器|
-|-------|--------|
-|–XX:+UseSerialGC|串行回收器|
-|–XX:+UseParallelGC|并行回收器|
-|–XX:+UseParallelOldGC|并行压缩回收器|
-|–XX:+UseConcMarkSweepGC|CMS 回收器|
+| 参数 | 垃圾回收器 |
+| ------- | -------- |
+| –XX:+UseSerialGC | 串行回收器 |
+| –XX:+UseParallelGC | 并行回收器 |
+| –XX:+UseParallelOldGC | 并行压缩回收器 |
+| –XX:+UseConcMarkSweepGC | CMS 回收器 |
 
 #### 垃圾回收器统计
 参数|描述
