@@ -200,6 +200,12 @@ jstat -gcutil pid 1000
 –XX:SurvivorRatio=n|32|Eden 与存活区的比值
 –XX:MaxPermSize=n|平台独立|持久代最大大小
 
+##### MaxNewSize NewRatio 生效的顺序问题
+自从 JDK1.4 以后就没有严格的顺序了，是根据如下公式计算得出
+```
+min(MaxNewSize, max(NewSize, heap/(NewRatio+1)))
+```
+
 #### 并行回收器参数
 
 参数|默认值|描述
@@ -212,7 +218,7 @@ jstat -gcutil pid 1000
 
 参数|默认值|描述
 |---|---|---|
-–XX:+CMSIncrementalMode|未开启|开启增量模式
+–XX:+CMSIncrementalMode|未开启|开启增量模式，JDK8 中被废除（包括 CMSIncremental*）
 –XX:+CMSIncrementalPacing|未开启|
 –XX:ParallelGCThreads=n|CPU 数量|年轻代和老年代的并发线程数
 
@@ -233,5 +239,10 @@ CATALINA_OPTS="${CATALINA_OPTS} -Xloggc:${MIDDLEWARE_LOGS}/gc.log -XX:+PrintGCDe
 CATALINA_OPTS="${CATALINA_OPTS} -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${MIDDLEWARE_LOGS}/java.hprof"
 
 ```
+
+## 相关资料
+[GC 常见问题](http://www.oracle.com/technetwork/java/faq-140837.html)
+[JDK7 JVM 参数大全](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
+[JDK8 JVM 参数大全](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
 
 
