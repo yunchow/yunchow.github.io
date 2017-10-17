@@ -8,52 +8,9 @@ keywords: Java8 JVM 参数大全
 
 [源文地址](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
 
-<div id="JSSOR624"><a id="CBBFHAJA" name="CBBFHAJA"></a><a id="BGBCIEFC" name="BGBCIEFC">
-<div class="smallpagetitle">
-
 # java
-</div>
-
 Launches a Java application.
 
-</a><div><a id="BGBCIEFC" name="BGBCIEFC"></a><a id="sthref47" name="sthref47">
-
-## Synopsis
-
-**java** [_options_] _classname_ [_args_]
-
-**java** [_options_] **-jar** _filename_ [_args_]
-
-</a><dl><a id="sthref47" name="sthref47">
-<dt>_options_</dt>
-</a><dd><a id="sthref47" name="sthref47">
-</a>
-
-<a id="sthref47" name="sthref47">Command-line options separated by spaces. See </a>[Options](#CBBIJCHG).
-
-</dd>
-<dt>_classname_</dt>
-<dd>
-
-The name of the class to be launched.
-
-</dd>
-<dt>_filename_</dt>
-<dd>
-
-The name of the Java Archive (JAR) file to be called. Used only with the `-jar` option.
-
-</dd>
-<dt>_args_</dt>
-<dd>
-
-The arguments passed to the `main()` method separated by spaces.
-
-</dd>
-</dl>
-</div>
-
-<div><a id="sthref48" name="sthref48">
 
 ## Description
 
@@ -70,9 +27,6 @@ The JRE searches for the startup class (and other classes used by the applicatio
 
 Arguments after the class file name or the JAR file name are passed to the `main()` method.
 
-</a></div><a id="sthref48" name="sthref48">
-
-</a><div><a id="sthref48" name="sthref48"></a><a id="CBBIJCHG" name="CBBIJCHG">
 
 ## Options
 
@@ -2507,6 +2461,5 @@ The following exit values are typically returned by the launcher when the launch
 *   [`jar`(1)](jar.html#BGBEJEEG)
 
 *   [`jstat`(1)](jstat.html#BEHBBBDJ)
-</div>
-</div>
+
 
