@@ -98,7 +98,7 @@ MinHeapFreeRatio 和 MaxHeapFreeRatio 这两个参数指出了堆的剩余比例
 
 MaxHeapSize MaxNewSize NewSize 见名知义，为年轻代和老年代的大小
 
-OldSize 这个参数好像没什么用
+OldSize 这个参数好像没什么用，指的是老年代默认大小，如果设置堆空间后，参数应该是无效的
 
 NewRatio 这个参数指定了老年代与年轻代的比例，但是如果大小固定的情况下，参数是无效的
 
