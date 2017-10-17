@@ -1,9 +1,9 @@
 ---
 layout: wiki
-title: Java7及以下版本 JVM 参数大全
+title: Java7 及以下版本参数大全
 categories: wiki
-description: Java7及以下版本 JVM 参数大全
-keywords: Java7及以下版本 JVM 参数大全
+description: Java7 及以下版本参数大全
+keywords: Java7 及以下版本参数大全
 ---
 
 [源文地址](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)

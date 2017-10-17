@@ -1,9 +1,9 @@
 ---
 layout: wiki
-title: Java8 JVM 参数大全
+title: Java8 参数大全
 categories: wiki
-description: Java8 JVM 参数大全
-keywords: Java8 JVM 参数大全
+description: Java8 参数大全
+keywords: Java8 参数大全
 ---
 
 [源文地址](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
