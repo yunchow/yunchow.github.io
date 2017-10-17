@@ -94,6 +94,18 @@ Perm Generation:
    61.078614151448264% used
 ```
 
+MinHeapFreeRatio 和 MaxHeapFreeRatio 这两个参数指出了堆的剩余比例，超过这个比例，内存会自动设定为 Xmx 和 Xms 的大小，如果一开始就将 Xmx 和 Xms 设置成一样，这 2 个参数是无效的。
+
+MaxHeapSize MaxNewSize NewSize 见名知义，为年轻代和老年代的大小
+
+OldSize 这个参数好像没什么用
+
+NewRatio 这个参数指定了老年代与年轻代的比例，但是如果大小固定的情况下，参数是无效的
+
+SurvivorRatio 这个参数指出 Eden 区是存活区的几倍，一般设置为10，意思是 1/10 的对象会存活下来
+
+PermSize MaxPermSize 持久代的大小
+
 ### jmap -histo pid
 打印 Java 对象占用的堆内存详细列表，会按占用大小降序排列
 
