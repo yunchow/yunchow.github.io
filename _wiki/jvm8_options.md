@@ -8,7 +8,7 @@ keywords: Java8 JVM 参数大全
 
 [源文地址](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
 
-# java
+# java 8 参数大全
 Launches a Java application.
 
 
@@ -2444,22 +2444,5 @@ The following exit values are typically returned by the launcher when the launch
 
 </a><div><a id="sthref55" name="sthref55"></a><a id="sthref56" name="sthref56">
 
-## See Also
-
-</a>
-
-<a id="sthref56" name="sthref56">
-</a>*   <a id="sthref56" name="sthref56">
-</a>
-
-    <a id="sthref56" name="sthref56"></a>[`javac`(1)](javac.html#BHCJCBFB)
-
-*   [`jdb`(1)](jdb.html#CHDFHFDB)
-
-*   [`javah`(1)](javah.html#BJECIACA)
-
-*   [`jar`(1)](jar.html#BGBEJEEG)
-
-*   [`jstat`(1)](jstat.html#BEHBBBDJ)
 
 

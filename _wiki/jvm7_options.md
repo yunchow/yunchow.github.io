@@ -8,7 +8,7 @@ keywords: Java7及以下版本 JVM 参数大全
 
 [源文地址](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
 
-# Java HotSpot VM Options
+# Java7 及以下版本 HotSpot VM Options
 
 ### Please note that this page only applies to JDK 7 and earlier releases. For JDK 8 please see the [Windows](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html), [Solaris](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html), [Linux](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html) and [Mac OS X](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html) reference pages.
 
