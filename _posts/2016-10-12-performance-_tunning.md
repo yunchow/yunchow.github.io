@@ -337,6 +337,12 @@ dmesg | grep java
 [34341065.269762] Memory cgroup out of memory: Kill process 50416 (java) score 936 or sacrifice child
 [34341065.279322] Killed process 50416, UID 697, (java) total-vm:16345624kB, anon-rss:7822592kB, file-rss:1804kB
 ```
+
+分析这个日志，发现 Java 进程被系统杀掉，但是前面的时间参数看不清楚，使用命令转换一下
+```
+date -d "1970-01-01 UTC `echo "$(date +%s)-$(cat /proc/uptime|cut -f 1 -d ' ')+34341065.279322"|bc ` seconds"
+```
+
 ## free
 查看系统内存信息
 ```
