@@ -8,6 +8,8 @@ keywords: Java9 参数大全
 
 # java
 
+[源文地址](http://docs.oracle.com/javase/9/tools/java.htm#JSWOR624)
+
 <div>
 
 <span>You can use the `java` command to launch a Java application.</span>
