@@ -1,9 +1,9 @@
 ---
 layout: wiki
-title: 文章收录
+title: 精彩文章收录
 categories: wiki
-description: 文章收录
-keywords: 文章收录
+description: 精彩文章收录
+keywords: 精彩文章收录
 ---
 
 ## JVM
