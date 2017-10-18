@@ -245,5 +245,5 @@ CATALINA_OPTS="${CATALINA_OPTS} -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath
 * [JDK7 JVM 参数大全](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
 * [JDK8 JVM 参数大全](http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
 * [JDK9 JVM 参数大全](http://docs.oracle.com/javase/9/tools/java.htm#JSWOR624)
-
+* [触发 JVM 进行 Full GC 的情况及应对策略](http://blog.csdn.net/chenleixing/article/details/46706039)
 
