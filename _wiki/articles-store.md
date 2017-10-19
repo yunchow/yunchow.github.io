@@ -11,6 +11,9 @@ keywords: 精彩文章收录
 * [理解 CMS GC 日志](http://www.cnblogs.com/kakaxisir/p/6209266.html)
 * [深入理解 Java G1 垃圾收集器](http://blog.jobbole.com/109170/)
 * [JVM 内存管理模型](http://www.oracle.com/technetwork/java/javase/tech/memorymanagement-whitepaper-1-150020.pdf)
+* [JVM GC 日志说明](https://docs.oracle.com/cd/E19900-01/819-4742/abeig/index.html)
+* [JVM Heap 调优](https://docs.oracle.com/cd/E19900-01/819-4742/abeik/index.html)
+* [JVM GC 日志分析](http://swcdxd.iteye.com/blog/1859858)
 
 ## Scala
 * [Scala学习资料大全](https://stackoverflow.com/tags/scala/info)
