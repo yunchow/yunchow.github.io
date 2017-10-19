@@ -205,6 +205,11 @@ jstat -gcutil pid 1000
 ```
 min(MaxNewSize, max(NewSize, heap/(NewRatio+1)))
 ```
+还有一个生效的优先级的设定
+```
+-XX:NewSize > -Xmn > -XX:NewRatio
+```
+所以日常工作中，我们直接指定 -Xmn 就可以了，还有一点就是 -Xmn 会将年轻代的初始值和最大值都设成一样，等同于 -Xmn = -XX:MaxNewSize = -XX:NewSize
 
 #### 并行回收器参数
 
