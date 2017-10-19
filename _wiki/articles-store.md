@@ -14,6 +14,7 @@ keywords: 精彩文章收录
 * [JVM GC 日志说明](https://docs.oracle.com/cd/E19900-01/819-4742/abeig/index.html)
 * [JVM Heap 调优](https://docs.oracle.com/cd/E19900-01/819-4742/abeik/index.html)
 * [JVM GC 日志分析](http://swcdxd.iteye.com/blog/1859858)
+* [关于 CMS 垃圾收集算法的一些疑惑](http://www.jianshu.com/p/55670407fdb9)
 
 ## Scala
 * [Scala学习资料大全](https://stackoverflow.com/tags/scala/info)
