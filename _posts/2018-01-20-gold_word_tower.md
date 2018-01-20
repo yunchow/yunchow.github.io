@@ -45,6 +45,6 @@ keywords: 金字塔原理
 
 ## Reference
 + [冯唐的博客 - 老聃的金字塔原则](http://blog.sina.com.cn/s/blog_471facb1010000ed.html)
-+ [简单概括一下《金字塔原理》的主要内容](https://www.zhihu.com/question/21185168)
++ [知乎 - 简单概括一下《金字塔原理》的主要内容](https://www.zhihu.com/question/21185168)
 
 
