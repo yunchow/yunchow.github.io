@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 线性代数的本质
-categories: [AI]
+categories: [AI转载]
 description: 线性代数的本质
 keywords: 线性代数的本质
 ---
