@@ -6,6 +6,12 @@ description: 精彩文章收录
 keywords: 精彩文章收录
 ---
 
+## ML
+* [为什么机器能够学习——PAC Learnability](http://www.cnblogs.com/wacc/p/4338437.html)
+
+## Math
+* [Markdown 中写数学公式](http://jzqt.github.io/2015/06/30/Markdown%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/)
+
 ## JVM
 * [Java 垃圾回收手册](https://plumbr.eu/java-garbage-collection-handbook)
 * [理解 CMS GC 日志](http://www.cnblogs.com/kakaxisir/p/6209266.html)
