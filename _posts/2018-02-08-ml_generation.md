@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Theory of Generalization
-categories: [AI]
+categories: [AI转载]
 description: ML
 keywords: ML
 ---

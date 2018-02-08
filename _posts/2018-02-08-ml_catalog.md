@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 机器学习的分类
-categories: [AI]
+categories: [AI转载]
 description: ML
 keywords: ML
 ---
