@@ -13,17 +13,17 @@ keywords: ML
 ![](http://5b0988e595225.cdn.sohucs.com/images/20170826/a229a5ce1a9b464bb66436c50d43050e.jpeg)
 
 ## 数学相关
-+ `视频` [线性代数的本质：深入浅出的讲解整个线性代数体系](https://space.bilibili.com/88461692?spm_id_from=333.338.viewbox_report.7#/channel/detail?cid=9450) ==强烈推荐==
-+ `视频` [清华大学线性代数课程](https://www.bilibili.com/video/av8264966/) $^{比较浅显有时间可以看看}$
++ `视频` [线性代数的本质：深入浅出的讲解整个线性代数体系](https://space.bilibili.com/88461692?spm_id_from=333.338.viewbox_report.7#/channel/detail?cid=9450) <span style="background-color:yellow">强烈推荐</span>
++ `视频` [清华大学线性代数课程](https://www.bilibili.com/video/av8264966/) <font size=1>略浅显有时间可以看看</font>
 + `视频` [麻省理工学院：线性代数](https://www.bilibili.com/video/av14776429/)
 + `视频` [可汗学院公开课：线性代数](https://open.163.com/movie/2011/6/C/B/M82ICR1D9_M83C7VICB.html)
 + `视频` [可汗学院公开课：概率论](https://open.163.com/movie/2011/3/B/Q/M82IF3HFQ_M831V1DBQ.html?recomend=2)
 
 ## 机器学习
-+ `视频` [【机器学习基石】台湾大学机器学习课程上](https://www.bilibili.com/video/av12463015/) ==强烈推荐==
-+ `视频` [【机器学习技法】台湾大学机器学习课程下](https://www.bilibili.com/video/av6991226/) ==强烈推荐==
-+ `视频` [李宏毅机器学习(2017)](https://www.bilibili.com/video/av10590361/) ==推荐==
-+ `视频` [吴恩达机器学习](http://study.163.com/course/courseMain.htm?courseId=1004570029) ==推荐==
++ `视频` [【机器学习基石】台湾大学机器学习课程上](https://www.bilibili.com/video/av12463015/) <span style="background-color:yellow">强烈推荐</span>
++ `视频` [【机器学习技法】台湾大学机器学习课程下](https://www.bilibili.com/video/av6991226/) <span style="background-color:yellow">强烈推荐</span>
++ `视频` [李宏毅机器学习(2017)](https://www.bilibili.com/video/av10590361/) <span style="background-color:cyan">推荐</span>
++ `视频` [吴恩达机器学习](http://study.163.com/course/courseMain.htm?courseId=1004570029) <span style="background-color:cyan">推荐</span>
 + `视频` [张志华-机器学习导论](http://study.163.com/course/courseMain.htm?courseId=1694003)
 + `视频` [StudyAI 机器学习](http://www.studyai.com/course/index/)
 
@@ -37,7 +37,7 @@ keywords: ML
 + [Python 教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki0014316089557264a6b348958f449949df42a6d3a2e542c000/001431608990315a01b575e2ab041168ff0df194698afac000)
 
 ## 文档
-+ [TensorFlow 官方文档中文版](http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/introduction.html) ==强烈推荐==
++ [TensorFlow 官方文档中文版](http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/introduction.html) <span style="background-color:yellow">强烈推荐</span>
 + [【机器学习基石】课堂笔记](http://zhouyun.me/categories/#AI%E8%BD%AC%E8%BD%BD) `看完视频后再来复习复习`
 
 ## 书籍推荐
