@@ -14,7 +14,7 @@ keywords: ML
 
 ## 数学相关
 + `视频` [线性代数的本质：深入浅出的讲解整个线性代数体系](https://space.bilibili.com/88461692?spm_id_from=333.338.viewbox_report.7#/channel/detail?cid=9450) <span style="background-color:yellow">强烈推荐</span>
-+ `视频` [清华大学线性代数课程](https://www.bilibili.com/video/av8264966/) <font size=1>略浅显有时间可以看看</font>
++ `视频` [清华大学线性代数课程](https://www.bilibili.com/video/av8264966/) `略浅显有时间可以看看`
 + `视频` [麻省理工学院：线性代数](https://www.bilibili.com/video/av14776429/)
 + `视频` [可汗学院公开课：线性代数](https://open.163.com/movie/2011/6/C/B/M82ICR1D9_M83C7VICB.html)
 + `视频` [可汗学院公开课：概率论](https://open.163.com/movie/2011/3/B/Q/M82IF3HFQ_M831V1DBQ.html?recomend=2)
