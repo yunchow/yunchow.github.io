@@ -39,6 +39,8 @@ keywords: ML
 ## 参考文档
 + [TensorFlow 官方文档中文版](http://wiki.jikexueyuan.com/project/tensorflow-zh/get_started/introduction.html) <span style="background-color:yellow">强烈推荐</span>
 + [【机器学习基石】课堂笔记](http://zhouyun.me/categories/#AI%E8%BD%AC%E8%BD%BD) `看完视频后再来复习复习`
++ [numpy reference pdf](https://docs.scipy.org/doc/numpy/numpy-ref-1.14.0.pdf)
++ [Numpy and Scipy Documentation](https://docs.scipy.org/doc/)
 
 ## 书籍推荐
 + [算法导论（原书第3版）/ 计算机科学丛书 (Introduction to Algorithms, third edition)](https://item.jd.com/11144230.html)
