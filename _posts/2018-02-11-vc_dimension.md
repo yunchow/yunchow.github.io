@@ -6,8 +6,6 @@ description: VC 维的来龙去脉
 keywords: python, ml, vc-dimension
 ---
 
-[toc]
-
 VC维在机器学习领域是一个很基础的概念，它给诸多机器学习方法的可学习性提供了坚实的理论基础，但有时候，特别是对我们工程师而言，SVM，LR，深度学习等可能都已经用到线上了，但却不理解VC维。 
 
 这里，在台湾大学[机器学习基石][1]课程的基础上，我们简单聊聊“VC维的来龙去脉”。我们将解决以下问题：为什么某机器学习方法是可学习的？为什么会有过拟合？拿什么来衡量机器学习模型的复杂度？深度学习与VC维的关系？ 
@@ -465,6 +463,10 @@ dVC = O(VD)，其中V表示神经网络中神经元的个数，D表示weight的�
    [88]: http://www.flickering.cn
 
   From: <http://www.flickering.cn/machine_learning/2015/04/vc%E7%BB%B4%E7%9A%84%E6%9D%A5%E9%BE%99%E5%8E%BB%E8%84%89/>
+
+
+
+
 
 
 
