@@ -16,7 +16,7 @@ permalink: /about/
 
 ## 联系
 
-yunchow.zy@gmail.com
+job@zhouyun.me
 
 ## SKILLS
 * FP
@@ -24,6 +24,8 @@ yunchow.zy@gmail.com
 * 高并发
 * 高可用
 * 分布式
+
+
 
 
 
